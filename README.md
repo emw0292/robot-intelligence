@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Robot Intelligence
 
-## Getting Started
+로봇·AI 정책·산업·기술 동향을 통합 제공하는 전략기획용 Intelligence Dashboard입니다.
 
-First, run the development server:
+현재 v0.1은 40건의 샘플 데이터를 기반으로 정책, 산업, 기술, R&D, 표준·인증 동향과 일간·주간·월간 리포트를 제공합니다. 외부 API, 데이터베이스, 크롤링, 로그인 기능은 포함하지 않습니다.
+
+## 실행
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+개발 서버는 [http://localhost:3000](http://localhost:3000)에서 확인할 수 있습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 검증
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## 주요 구조
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/
+  app/          # App Router 페이지 및 라우트
+  components/   # 공통 레이아웃, 카드, 필터, 대시보드 UI
+  data/         # 샘플 동향, 리포트, R&D, 전략 신호
+  types/        # 공통 TypeScript 타입
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 주요 라우트
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `/` — 통합 Intelligence Dashboard
+- `/trends` — 검색·국가·분야·중요도 필터가 있는 전체 동향
+- `/policy`, `/industry`, `/technology`, `/rnd`, `/standards`
+- `/reports/daily`, `/reports/weekly`, `/reports/monthly`
+- `/trends/[id]` — 동향 상세 분석
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+> 화면에 표시되는 정책·시장·기술 정보는 서비스 구조 검증을 위한 샘플 데이터입니다.
