@@ -247,12 +247,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .detail-article > header { padding: 44px 52px 32px; border-right: 1px solid var(--slate-200); border-bottom: 1px solid var(--slate-200); border-left: 1px solid var(--slate-200); }
 .detail-article h1 { max-width: 1050px; margin: 25px 0 15px; color: var(--navy-950); font-family: Georgia, "Noto Serif KR", serif; font-size: clamp(31px, 4vw, 49px); font-weight: 600; line-height: 1.25; letter-spacing: -.035em; }
 .detail-summary { max-width: 950px; margin: 0; color: var(--slate-700); font-size: 16px; line-height: 1.8; }
-.detail-meta { display: grid; grid-template-columns: repeat(4, 1fr); margin: 37px 0 0; padding-top: 20px; border-top: 1px solid var(--slate-200); }
+.detail-meta { display: grid; grid-template-columns: repeat(4, 1fr); margin: 30px 0 0; padding-top: 18px; border-top: 1px solid var(--slate-200); }
 .detail-meta div { padding-left: 16px; border-left: 2px solid var(--slate-200); }.detail-meta dt { color: var(--slate-500); font-size: 10px; }.detail-meta dd { margin: 4px 0 0; color: var(--slate-700); font-size: 12px; font-weight: 700; }
 .detail-body { display: grid; grid-template-columns: 250px minmax(0, 800px); justify-content: center; gap: 70px; padding: 50px 30px; }
 .detail-body aside { align-self: start; padding: 20px; border-top: 3px solid var(--blue-700); background: var(--slate-50); }
 .detail-body aside p { margin: 0 0 13px; color: var(--blue-700); font-size: 9px; font-weight: 800; letter-spacing: .12em; }.detail-body aside strong { display: block; color: var(--navy-900); font-size: 19px; }.detail-body aside span { display: block; margin-top: 9px; color: var(--slate-500); font-size: 10px; }.detail-body aside a { display: block; margin-top: 22px; color: var(--blue-700); font-size: 10px; font-weight: 750; }
 .detail-content section { margin-bottom: 42px; }.detail-content h2 { margin: 0 0 16px; color: var(--navy-900); font-size: 21px; }.detail-content p { margin: 0; color: var(--slate-700); font-size: 14px; line-height: 2; }.detail-content ul { padding-left: 20px; color: var(--slate-700); font-size: 13px; line-height: 2; }
+.detail-summary-section { padding-bottom: 28px; border-bottom: 1px solid var(--slate-200); }
+.detail-summary-section .eyebrow { margin-bottom: 8px; }
 .implication-box { padding: 28px 30px; border-left: 4px solid var(--blue-700); background: var(--slate-50); }.implication-box .eyebrow { margin-bottom: 9px; }.implication-box h2 { margin-bottom: 12px; }
 
 /* Reports */

@@ -53,19 +53,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section-block sector-section">
-          <SectionHeader eyebrow="LATEST BY SECTOR" title="주요 분야별 동향" description="정책·시장·기술 축에서 즉시 검토해야 할 최근 변화를 선별했습니다." />
-          <div className="three-column-trends">
-            {categories.map((category) => (
-              <div className="trend-column" key={category.key}>
-                <div className="column-head"><h3>{category.title}</h3><span>{categoryLabels[category.key]}</span></div>
-                <div>{trends.filter((trend) => trend.category === category.key).slice(0, 6).map((trend) => <TrendListItem compact key={trend.id} trend={trend} />)}</div>
-                <Link href={category.href}>{category.title} 더보기 <span aria-hidden="true">→</span></Link>
-              </div>
-            ))}
-          </div>
-        </section>
-
         <section className="section-block signal-section">
           <SectionHeader eyebrow="EARLY WARNING · 5 SIGNALS" title="Strategic Signal" description="정책·산업·기술 데이터의 방향성과 변화 강도를 교차 분석한 조기경보 지표" href="/reports/monthly" linkLabel="월간 신호 분석" />
           <div className="signal-summary" aria-label="전략 신호 요약">
@@ -75,6 +62,19 @@ export default function Home() {
             <p>최근 30일 정책·산업·기술 표본 기준</p>
           </div>
           <StrategicSignals />
+        </section>
+
+        <section className="section-block sector-section">
+          <SectionHeader eyebrow="LATEST BY SECTOR" title="정책 · 산업 · 기술 Intelligence" description="세 분야에서 즉시 검토해야 할 최신 변화를 5건씩 선별했습니다." />
+          <div className="three-column-trends">
+            {categories.map((category) => (
+              <div className="trend-column" key={category.key}>
+                <div className="column-head"><h3>{category.title}</h3><span>{categoryLabels[category.key]}</span></div>
+                <div>{trends.filter((trend) => trend.category === category.key).slice(0, 5).map((trend) => <TrendListItem compact key={trend.id} trend={trend} />)}</div>
+                <Link href={category.href}>{category.title} 더보기 <span aria-hidden="true">→</span></Link>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="section-block latest-section">
