@@ -1,4 +1,5 @@
-import type { Country, Trend, TrendCategory } from "@/types";
+import type { Trend, TrendCategory } from "@/types";
+import { categoryLabels, countries } from "@/config/information-architecture";
 
 type TrendSeed = Omit<
   Trend,
@@ -7,13 +8,7 @@ type TrendSeed = Omit<
   implication?: string;
 };
 
-const categoryNames: Record<TrendCategory, string> = {
-  policy: "정책",
-  industry: "산업",
-  technology: "기술",
-  rnd: "R&D",
-  standards: "표준·인증",
-};
+const categoryNames: Record<TrendCategory, string> = categoryLabels;
 
 const seeds: TrendSeed[] = [
   {
@@ -153,7 +148,7 @@ const seeds: TrendSeed[] = [
     title: "일본 돌봄로봇 시장, 구독형 운영모델 도입 확대",
     summary: "기기 판매 중심에서 유지관리와 운영 데이터 분석을 결합한 서비스 계약이 빠르게 늘고 있다.",
     category: "industry",
-    subcategory: "서비스",
+    subcategory: "시장",
     country: "일본",
     organization: "일본로봇공업회",
     publishedAt: "2026.08.07",
@@ -201,7 +196,7 @@ const seeds: TrendSeed[] = [
     title: "조선 현장 용접·검사 로봇 도입 프로젝트 본격화",
     summary: "대형 구조물의 작업 안전과 품질 균일화를 위한 이동형 로봇 공동실증이 시작됐다.",
     category: "industry",
-    subcategory: "실증",
+    subcategory: "생산",
     country: "대한민국",
     organization: "한국조선해양플랜트협회",
     publishedAt: "2026.07.30",
@@ -225,7 +220,7 @@ const seeds: TrendSeed[] = [
     title: "초박형 촉각센서 기반 정밀 파지 기술 성능 향상",
     summary: "곡면 그리퍼에 적용 가능한 센서와 실시간 미끄럼 보정 알고리즘이 결합됐다.",
     category: "technology",
-    subcategory: "센서",
+    subcategory: "핵심부품",
     country: "일본",
     organization: "산업기술종합연구소",
     publishedAt: "2026.08.10",
@@ -237,7 +232,7 @@ const seeds: TrendSeed[] = [
     title: "제조 공정 특화 Vision-Language-Action 모델 공개",
     summary: "작업지시서와 영상 정보를 함께 이해해 조립 순서를 생성하는 경량 모델이 발표됐다.",
     category: "technology",
-    subcategory: "Robot AI",
+    subcategory: "VLA",
     country: "대한민국",
     organization: "한국전자통신연구원",
     publishedAt: "2026.08.09",
@@ -285,7 +280,7 @@ const seeds: TrendSeed[] = [
     title: "차세대 경량 감속기 내구수명 검증 결과 발표",
     summary: "서비스로봇 관절용 감속기의 중량을 낮추면서 반복 충격 내구성을 개선한 시험 결과가 공개됐다.",
     category: "technology",
-    subcategory: "구동기",
+    subcategory: "핵심부품",
     country: "일본",
     organization: "일본기계연구센터",
     publishedAt: "2026.08.02",
@@ -309,7 +304,7 @@ const seeds: TrendSeed[] = [
     title: "AI 팩토리 로봇 실증 확산사업 신규 공고",
     summary: "중견·중소 제조기업을 대상으로 로봇 AI 기반 공정 최적화와 현장 실증을 지원한다.",
     category: "rnd",
-    subcategory: "실증사업",
+    subcategory: "실증",
     country: "대한민국",
     organization: "산업통상자원부",
     publishedAt: "2026.08.11",
@@ -321,7 +316,7 @@ const seeds: TrendSeed[] = [
     title: "극한환경 로봇 소재·구동계 연구 프로그램 착수",
     summary: "고온·방사선·진공 환경에서 장시간 동작 가능한 소재와 구동 모듈 개발을 지원한다.",
     category: "rnd",
-    subcategory: "정부 R&D",
+    subcategory: "과제공고",
     country: "미국",
     organization: "미국 에너지부",
     publishedAt: "2026.08.10",
@@ -333,7 +328,7 @@ const seeds: TrendSeed[] = [
     title: "농업로봇 상호운용 실증 컨소시엄 참여기관 모집",
     summary: "과수·시설원예 환경에서 작업기 교환과 데이터 연계를 검증할 실증기관을 선정한다.",
     category: "rnd",
-    subcategory: "실증사업",
+    subcategory: "실증",
     country: "EU",
     organization: "Horizon Europe",
     publishedAt: "2026.08.08",
@@ -357,7 +352,7 @@ const seeds: TrendSeed[] = [
     title: "오픈소스 로봇 운영체계 공동연구 거점 출범",
     summary: "산학연 공동으로 실시간 제어, 시뮬레이션, 개발도구의 표준 참조구현을 개발한다.",
     category: "rnd",
-    subcategory: "정부 R&D",
+    subcategory: "과제공고",
     country: "중국",
     organization: "국가자연과학기금위원회",
     publishedAt: "2026.08.05",
@@ -393,7 +388,7 @@ const seeds: TrendSeed[] = [
     title: "의료 보조로봇 임상 실증 프로젝트 확대",
     summary: "병동 물류와 환자 이동 보조 로봇의 안전성·운영효율을 검증하는 다기관 실증이 추진된다.",
     category: "rnd",
-    subcategory: "실증사업",
+    subcategory: "실증",
     country: "중국",
     organization: "국가위생건강위원회",
     publishedAt: "2026.07.28",
@@ -507,9 +502,7 @@ export const trends: Trend[] = seeds.map((seed) => ({
   sourceName: `${seed.organization} 발표자료`,
 }));
 
-export const countries: Country[] = ["대한민국", "미국", "중국", "일본", "EU"];
-
-export const categoryLabels: Record<TrendCategory, string> = categoryNames;
+export { categoryLabels, countries };
 
 export function getTrend(id: string) {
   return trends.find((trend) => trend.id === id);

@@ -3,23 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
-const items = [
-  ["홈", "/"],
-  ["최신 동향", "/trends"],
-  ["정책", "/policy"],
-  ["산업", "/industry"],
-  ["기술", "/technology"],
-  ["R&D", "/rnd"],
-  ["표준·인증", "/standards"],
-  ["일간 리포트", "/reports/daily"],
-  ["주간 리포트", "/reports/weekly"],
-  ["월간 리포트", "/reports/monthly"],
-] as const;
+import { primaryNavigation, reportNavigation } from "@/config/information-architecture";
 
 export function Navigation() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [reportsOpen, setReportsOpen] = useState(false);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === href : pathname.startsWith(href);
@@ -38,7 +27,7 @@ export function Navigation() {
           메뉴
         </button>
         <div id="primary-navigation" className={`nav-links ${open ? "is-open" : ""}`}>
-          {items.map(([label, href]) => (
+          {primaryNavigation.map(({ label, href }) => (
             <Link
               key={href}
               href={href}
@@ -49,6 +38,29 @@ export function Navigation() {
               {label}
             </Link>
           ))}
+          <div className={`nav-dropdown ${pathname.startsWith("/reports") ? "active" : ""} ${reportsOpen ? "is-open" : ""}`}>
+            <button
+              type="button"
+              aria-expanded={reportsOpen}
+              aria-controls="report-navigation"
+              onClick={() => setReportsOpen((value) => !value)}
+            >
+              리포트 <span aria-hidden="true">▾</span>
+            </button>
+            <div id="report-navigation" className="nav-dropdown-menu">
+              {reportNavigation.map(({ label, href }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className={isActive(href) ? "active" : undefined}
+                  aria-current={isActive(href) ? "page" : undefined}
+                  onClick={() => { setOpen(false); setReportsOpen(false); }}
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </nav>

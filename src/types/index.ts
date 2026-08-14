@@ -35,7 +35,7 @@ export type RNDNotice = {
   deadline: string;
   remainingDays: number;
   status: "접수중" | "마감임박" | "예정";
-  type: "정부 R&D" | "사업공고" | "과제공고" | "조달" | "실증사업";
+  type: "사업공고" | "과제공고" | "조달" | "실증";
 };
 
 export type Signal = {

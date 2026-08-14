@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { countries } from "@/data/trends";
 
 const categoryOptions = [
@@ -8,13 +9,13 @@ const categoryOptions = [
 export function TrendFilters({
   values,
 }: {
-  values: { q?: string; country?: string; category?: string; importance?: string };
+  values: { q?: string; country?: string; category?: string; importance?: string; period?: string };
 }) {
   return (
     <form className="filter-panel" action="/trends">
       <div className="filter-group filter-search">
         <label htmlFor="filter-q">통합검색</label>
-        <input id="filter-q" type="search" name="q" defaultValue={values.q} placeholder="제목·기관·키워드" />
+        <input id="filter-q" type="search" name="q" defaultValue={values.q} placeholder="제목·요약·기관·국가·키워드" />
       </div>
       <div className="filter-group">
         <label htmlFor="filter-country">국가</label>
@@ -36,7 +37,16 @@ export function TrendFilters({
           <option value="A">A</option><option value="B">B</option><option value="C">C</option>
         </select>
       </div>
-      <button type="submit">필터 적용</button>
+      <div className="filter-group">
+        <label htmlFor="filter-period">기간</label>
+        <select id="filter-period" name="period" defaultValue={values.period ?? ""}>
+          <option value="">전체 기간</option>
+          <option value="7">최근 7일</option>
+          <option value="30">최근 30일</option>
+          <option value="90">최근 90일</option>
+        </select>
+      </div>
+      <div className="filter-actions"><button type="submit">필터 적용</button><Link href="/trends">초기화</Link></div>
     </form>
   );
 }
