@@ -2,13 +2,20 @@
 
 로봇·AI 정책·산업·기술 동향을 통합 제공하는 전략기획용 Intelligence Dashboard입니다.
 
-현재 v0.1은 40건의 샘플 데이터를 기반으로 정책, 산업, 기술, R&D, 표준·인증 동향과 일간·주간·월간 리포트를 제공합니다. 외부 API, 데이터베이스, 크롤링, 로그인 기능은 포함하지 않습니다.
+정책, 산업, 기술, R&D, 표준·인증 동향과 일간·주간·월간 리포트를 제공합니다. `/trends`와 `/trends/[id]`는 Supabase의 `public.trends` 테이블에서 공개 데이터를 조회합니다.
 
 ## 실행
 
 ```bash
 npm install
 npm run dev
+```
+
+`.env.example`을 참고해 `.env.local`에 다음 값을 설정해야 합니다.
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
 ```
 
 개발 서버는 [http://localhost:3000](http://localhost:3000)에서 확인할 수 있습니다.
@@ -38,4 +45,4 @@ src/
 - `/reports/daily`, `/reports/weekly`, `/reports/monthly`
 - `/trends/[id]` — 동향 상세 분석
 
-> 화면에 표시되는 정책·시장·기술 정보는 서비스 구조 검증을 위한 샘플 데이터입니다.
+> 홈과 기타 분류·리포트 화면의 일부 정보는 서비스 구조 검증을 위한 샘플 데이터입니다.

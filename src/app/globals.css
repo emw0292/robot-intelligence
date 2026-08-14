@@ -233,6 +233,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .result-summary p { margin: 0; font-size: 12px; }.result-summary p strong { color: var(--blue-700); font-size: 18px; }
 .result-summary span { padding: 4px 9px; color: var(--slate-600, #596878); background: var(--slate-100); font-size: 10px; }
 .empty-state { padding: 80px 20px; border: 1px solid var(--slate-200); text-align: center; }.empty-state strong { color: var(--navy-900); font-size: 18px; }.empty-state p { color: var(--slate-500); }
+.data-error-state { border-color: #d8dee8; background: var(--slate-50); }.data-error-state a { color: var(--blue-700); font-size: 11px; font-weight: 750; }
 .topic-links { display: flex; flex-wrap: wrap; gap: 0; margin: 24px 0 0; border: 1px solid var(--slate-200); background: var(--white); }
 .topic-links a, .topic-links span { display: inline-flex; min-height: 41px; align-items: center; padding: 0 18px; border-right: 1px solid var(--slate-200); color: var(--slate-600, #596878); font-size: 11px; font-weight: 650; }
 .topic-links a:hover, .topic-links a.active, .topic-links span.active { color: var(--white); background: var(--navy-800); }
