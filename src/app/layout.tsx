@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { Navigation } from "@/components/layout/navigation";
 import "./globals.css";
+
+const robotoBold = localFont({
+  src: "./fonts/Roboto-Bold.ttf",
+  weight: "700",
+  style: "normal",
+  display: "swap",
+  variable: "--font-roboto-bold",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("http://localhost:3000"),
@@ -32,7 +41,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="ko">
-      <body>
+      <body className={robotoBold.variable}>
         <Header />
         <Navigation />
         <main className="site-main">{children}</main>

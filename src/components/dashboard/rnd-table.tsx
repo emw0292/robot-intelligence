@@ -1,8 +1,9 @@
 import { rndNotices } from "@/data/rnd";
 import { ImportanceBadge } from "@/components/ui/badges";
+import type { RNDNotice } from "@/types";
 
-export function RNDTable({ limit }: { limit?: number }) {
-  const rows = limit ? rndNotices.slice(0, limit) : rndNotices;
+export function RNDTable({ limit, notices = rndNotices }: { limit?: number; notices?: RNDNotice[] }) {
+  const rows = limit ? notices.slice(0, limit) : notices;
   return (
     <div className="table-scroll">
       <table className="rnd-table">
@@ -20,6 +21,7 @@ export function RNDTable({ limit }: { limit?: number }) {
           ))}
         </tbody>
       </table>
+      {!rows.length && <div className="empty-state compact-empty"><strong>해당 분류의 공고가 없습니다.</strong><p>다른 공고 유형을 선택해 주세요.</p></div>}
     </div>
   );
 }

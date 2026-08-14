@@ -47,6 +47,7 @@ export function IntelligenceCollection({
       <div className="trend-grid">
         {trends.map((trend) => <TrendCard key={trend.id} trend={trend} />)}
       </div>
+      {!trends.length && <div className="empty-state compact-empty"><strong>해당 분류의 동향이 없습니다.</strong><p>현재 mock data 범위에서 다른 분류를 확인해 주세요.</p></div>}
       <div className="section-cta"><Link href={`/trends?category=${category}`}>전체 {title} 보기 →</Link></div>
     </section>
   );
