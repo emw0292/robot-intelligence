@@ -244,6 +244,7 @@ h1, h2, h3, strong, b, button, .nav-links, .badge { font-family: var(--font-robo
 .result-summary p { margin: 0; font-size: 13px; }.result-summary p strong { color: var(--blue-700); font-size: 19px; }
 .result-summary span { padding: 4px 9px; color: var(--slate-600, #596878); background: var(--slate-100); font-size: 11px; }
 .empty-state { padding: 80px 20px; border: 1px solid var(--slate-200); text-align: center; }.empty-state strong { color: var(--navy-900); font-size: 18px; }.empty-state p { color: var(--slate-500); }
+.data-error-state { border-color: #d8dee8; background: var(--slate-50); }.data-error-state a { color: var(--blue-700); font-size: 12px; font-weight: 750; }
 .compact-empty { padding: 34px 20px; background: var(--slate-50); }.compact-empty strong { font-size: 15px; }.compact-empty p { margin-bottom: 0; font-size: 11px; }
 .topic-links { display: flex; flex-wrap: wrap; gap: 0; margin: 24px 0 0; border: 1px solid var(--slate-200); background: var(--white); }
 .topic-links a, .topic-links span { display: inline-flex; min-height: 41px; align-items: center; padding: 0 18px; border-right: 1px solid var(--slate-200); color: var(--slate-600, #596878); font-size: 11px; font-weight: 650; }
